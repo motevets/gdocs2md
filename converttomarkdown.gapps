@@ -51,7 +51,7 @@ function ConvertToMarkdown() {
       } else if (inSrc) {
         text+=(srcIndent+escapeHTML(result.text)+"\n");
       } else if (result.text && result.text.length>0) {
-        text+=result.text+"\n\n";
+        text+=result.text+"\n";
       }
       
       if (result.images && result.images.length>0) {
@@ -217,7 +217,7 @@ function findPrefix(inSrc, element, listCounters) {
       var listItem = element;
       var nesting = listItem.getNestingLevel()
       for (var i=0; i<nesting; i++) {
-        prefix += "    ";
+        prefix += "  ";
       }
       var gt = listItem.getGlyphType();
       // Bullet list (<ul>):
